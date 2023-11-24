@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>Listado de Restaurantes</h2>
+
+  <div class="row">
+    <!-- Columna para la tabla -->
+    <div class="col-md-6">
+      <table class="table table-bordered table-hover" style="background-color: #f8f9fa;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Tipo de Comida</th>
+            <th>Fundación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let restaurante of restaurantes" (click)="showDetail(restaurante)" style="cursor: pointer;">
+            <td>{{ restaurante.id }}</td>
+            <td style="color: blue;">{{ restaurante.name }}</td>
+            <td>{{ restaurante.country }}</td>
+            <td>{{ restaurante.cuisine }}</td>
+            <td>{{ restaurante.opening_year }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p *ngIf="restauranteConMayorPuntaje">
+        El restaurante con mayor puntaje es: {{ restauranteConMayorPuntaje.name }} con un rating de {{ restauranteConMayorPuntaje.rating }}.
+      </p>
+    </div>
+
+    <!-- Columna para el detalle -->
+    <div class="col-md-6">
+      <app-RestauranteDetail *ngIf="selectedRestaurante" [restaurante]="selectedRestaurante"></app-RestauranteDetail>
+    </div>
+  </div>
+
+  <!-- Texto con el restaurante de mayor puntaje -->
+  
+</div>

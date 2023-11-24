@@ -1,0 +1,7 @@
+<div class="card" *ngIf="restaurante">
+  <img [src]="restaurante.image" class="card-img-top" alt="Restaurante imagen">
+  <div class="card-body">
+    <h5 class="card-title">{{ restaurante.name }}</h5>
+    <p class="card-text">Descripción: {{ restaurante.description }} | Puntuación: {{ restaurante.rating }}</p>
+  </div>
+</div>

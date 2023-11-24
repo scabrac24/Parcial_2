@@ -1,9 +1,0 @@
-<div class="card">
-  <img *ngIf="serie" [src]="serie.poster" class="card-img-top" alt="Serie Poster">
-  <div class="card-body" *ngIf="serie">
-    <h5 class="card-title">{{ serie.name }}</h5>
-    <p class="card-text">ID: {{ serie.id }} | Channel: {{ serie.channel }} | Seasons: {{ serie.seasons }}</p>
-    <p class="card-text">{{ serie.description }}</p>
-    <a *ngIf="serie.webpage" [href]="serie.webpage" class="btn btn-primary" target="_blank">Ir a la página web</a>
-  </div>
-</div>
